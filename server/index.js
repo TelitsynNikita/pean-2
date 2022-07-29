@@ -5,7 +5,7 @@ const port = process.env.PORT || 5200
 
 const start = async () => {
     try {
-        await sequelize.authenticate().then(() => console.log('БД подключина'))
+        await sequelize.authenticate().then(() => console.log('БД подключена'))
         await sequelize.sync()
         app.listen(port, () => console.log(`Сервер запущен на порту ${port}`))
     } catch (e) {

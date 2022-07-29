@@ -1,0 +1,64 @@
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    width: 40vw;
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .title {
+      color: var(--purple-main-color);
+    }
+
+    input {
+      background-color: #333;
+      padding: 10px 0 10px 20px;
+    }
+
+    button {
+      margin: 0 auto;
+      background-color: var(--purple-main-color);
+      color: #fff;
+      padding: 10px 30px;
+    }
+  }
+
+  .success {
+    position: absolute;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 25px;
+    background-color: var(--green-success);
+    font-weight: 900;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    animation-name: successful;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes successful {
+  0% {
+    transform: translateX(300px);
+  }
+
+  100% {
+    transform: translateX(-100px);
+  }
+}

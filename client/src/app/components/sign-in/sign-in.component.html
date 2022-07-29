@@ -1,0 +1,15 @@
+<div class="modal" (click)="changeModal($event)">
+  <form [formGroup]="form" (submit)="signIn(form)" class="form">
+    <app-secondary-title [title]="'Sign In'" class="title"></app-secondary-title>
+    <input type="email" formControlName="email" placeholder="email" class="input">
+    <input type="password" formControlName="password" placeholder="password" class="input">
+    <button class="button">Submit</button>
+  </form>
+
+  <div *ngIf="success" class="success">
+    Вы вошли
+  </div>
+</div>
+
+
+

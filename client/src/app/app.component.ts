@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  isModal = false
+
+  showModal() {
+    this.isModal = true
+  }
+
+  checkModal(modal: any) {
+    this.isModal = modal
+  }
 }

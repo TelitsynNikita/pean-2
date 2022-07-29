@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --sign-in-button: #343a62;
+  --purple-main-color: #793e96;
+  --green-success: #3a8832;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+.horizontal-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.vertical-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.validation {
+  color: #ff0000;
+  font-size: 10px;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  font-size: 16px;
+  color: #fff;
+
+  &::placeholder {
+    color: #777;
+  }
+}
+
+button {
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}

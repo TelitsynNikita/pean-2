@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
@@ -27,7 +27,7 @@ class AuthController {
 
         const token = generateJwt(user.id, user.email, user.role)
 
-        return res.json({token})
+        return res.json(token)
     }
 
     async registration(req, res) {
@@ -40,14 +40,14 @@ class AuthController {
         const candidate = await User.findOne({where: {email}})
 
         if (candidate) {
-            return res.status(404).json({message: 'Пользователь с таким email уже существует'})
+            return res.status(409).json({message: 'Пользователь с таким email уже существует'})
         }
 
         const hashPassword = await bcrypt.hash(password, 5)
         const user = await User.create({email, role, password: hashPassword})
         const token = generateJwt(user.id, user.email, user.role)
 
-        return res.json({token})
+        return res.json(token)
     }
 }
 
